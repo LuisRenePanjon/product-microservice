@@ -30,4 +30,10 @@ public class ProductController {
         productRepository.save(productEntity);
     }
 
+    @DeleteMapping("/products/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteProduct(@PathVariable String id){
+        productRepository.deleteById(id);
+    }
+
 }
